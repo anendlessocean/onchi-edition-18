@@ -2,6 +2,8 @@
 
 An editorial, high-fashion magazine and digital tribute landing page crafted to honor **Onchi** on her 18th birthday and inspire her for her **PHY 105** exam finale.
 
+🌐 **Live GitHub Pages URL**: [https://anendlessocean.github.io/onchi-edition-18/](https://anendlessocean.github.io/onchi-edition-18/)
+
 ---
 
 ## 🌟 Highlights & Features
