@@ -1,0 +1,19 @@
+{
+  "name": "onchi-18",
+  "version": "1.0.0",
+  "description": "Onchi // Edition XVIII - 18th Birthday Celebration Digital Publication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "birthday",
+    "edition-18",
+    "onchi",
+    "editorial",
+    "magazine"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}

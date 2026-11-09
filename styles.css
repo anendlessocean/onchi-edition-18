@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --bg-page: #FAF9F6;
+  --bg-card: #FFFFFF;
+  --bg-alt: #F3F2EE;
+  --text-main: #141413;
+  --text-body: #40403C;
+  --text-muted: #7A7A72;
+  --border-color: #E6E4DF;
+  --border-dark: #141413;
+  --accent-gold: #BC804C;
+  --accent-gold-soft: #F9F2EA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Subtle newspaper / editorial rule lines */
+.rule-b {
+  border-bottom: 1px solid var(--border-color);
+}
+.rule-t {
+  border-top: 1px solid var(--border-color);
+}
+.rule-y {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.rule-x {
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Drop shadow with editorial subtlety */
+.editorial-shadow {
+  box-shadow: 0 4px 20px -2px rgba(20, 20, 19, 0.05);
+}
+
+.editorial-shadow-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-shadow-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -4px rgba(20, 20, 19, 0.08);
+}
+
+/* Image framing styles */
+.plate-frame {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.plate-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.plate-frame:hover img {
+  transform: scale(1.02);
+}
+
+/* Golden quotation mark */
+.quote-mark {
+  color: var(--accent-gold);
+  font-family: var(--font-editorial);
+  line-height: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: #D5D3CC;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A69E;
+}
+
+/* Ambient glow on final banner */
+.ambient-glow {
+  background: radial-gradient(circle at 50% 20%, #FFFDF8 0%, #F9F5EC 65%, #F2EBDE 100%);
+  border: 1px solid #E5DACE;
+}
+
+/* Pulse animation for active dot */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.pulse-dot {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* Modal and Lightbox backdrop */
+.lightbox-backdrop {
+  backdrop-filter: blur(8px);
+  background-color: rgba(18, 18, 17, 0.85);
+}
+
+/* Grain texture overlay (subtle paper tactile feeling) */
+.paper-grain {
+  background-image: radial-gradient(#000000 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  opacity: 0.015;
+  pointer-events: none;
+}

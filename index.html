@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONCHI // 18 — Edition XVIII</title>
+  
+  <!-- Tailwind CSS via CDN with custom styling extension -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FAF9F6',
+            card: '#FFFFFF',
+            paperalt: '#F3F2EE',
+            ink: '#141413',
+            inkmuted: '#7A7A72',
+            inkbody: '#383834',
+            caramel: '#BC804C',
+            caramelsoft: '#FBF5EE',
+            bordercol: '#E6E4DF',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            editorial: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Canvas Confetti & Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-paper text-ink font-sans selection:bg-caramelsoft selection:text-caramel antialiased relative">
+  <!-- Subtle tactile paper grain overlay -->
+  <div class="fixed inset-0 paper-grain z-50 pointer-events-none"></div>
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="w-full bg-paper/90 backdrop-blur-sm sticky top-0 z-40 transition-all border-b border-bordercol/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand & Subtitle -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="#prologue" class="text-xs sm:text-sm font-bold tracking-widest uppercase font-mono hover:opacity-75 transition-opacity">
+          ONCHI <span class="text-neutral-400 font-light">//</span> 18
+        </a>
+        <span class="hidden sm:inline-block text-[10px] tracking-[0.2em] uppercase font-mono px-2 py-0.5 rounded border border-bordercol text-inkmuted bg-white/60">
+          18 YEARS OF BEING HER
+        </span>
+      </div>
+
+      <!-- Navigation Links & Ambient Control -->
+      <nav class="flex items-center gap-4 sm:gap-7 text-[11px] tracking-[0.16em] uppercase font-mono text-inkmuted">
+        <a href="#prologue" class="hover:text-ink transition-colors hidden md:inline-block">PROLOGUE</a>
+        <a href="#codex" class="hover:text-ink transition-colors hidden md:inline-block">THE CODEX</a>
+        <a href="#hakunamatata" class="hover:text-ink transition-colors hidden sm:inline-block">HAKUNAMATATA</a>
+        
+        <!-- Physics & Soul with Ambient Sound Synthesizer toggle -->
+        <button id="ambient-sound-btn" class="hover:text-ink flex items-center gap-1.5 transition-colors group cursor-pointer" title="Toggle Calm 432Hz Ambient Audio">
+          <span>PHYSICS & SOUL</span>
+          <span id="sound-status" class="text-[9px] px-1 py-0.2 bg-neutral-200/60 rounded text-neutral-600 group-hover:bg-caramel group-hover:text-white transition-all">432Hz</span>
+        </button>
+
+        <a href="#epilogue" class="hover:text-ink transition-colors hidden sm:inline-block">EPILOGUE</a>
+
+        <!-- User Profile Avatar Silhouette Button -->
+        <button class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center hover:scale-105 transition-transform trigger-signal-btn" title="Birthday Signal">
+          <i data-lucide="user" class="w-3.5 h-3.5"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== NEWSPAPER METADATA RULE ==================== -->
+  <section class="w-full border-b border-bordercol bg-paper">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between text-[10px] tracking-[0.2em] uppercase font-mono text-inkmuted">
+      <div>ISSUE NO. 18 &nbsp;/&nbsp; THE COMMENCEMENT &nbsp;/&nbsp; MAY, 2024</div>
+      <div class="hidden sm:block">PHY 105 FINALE & 18TH EDITION</div>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN EDITORIAL HERO ==================== -->
+  <main id="prologue" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      
+      <!-- Left Column: Editorial Headline, Lead Story & Metrics (7 cols) -->
+      <div class="lg:col-span-7 space-y-7">
+        
+        <!-- Eyebrow label -->
+        <div class="text-[10px] tracking-[0.25em] uppercase font-mono text-inkmuted font-semibold">
+          VOL. 18 SPEC. 0018 / 18TH BIRTHDAY CELEBRATION
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[46px] leading-[1.12] text-ink font-normal tracking-tight">
+          To the girl who carries both storm and quiet constellation.
+        </h1>
+
+        <!-- Lead Narrative Paragraph -->
+        <div class="space-y-4 text-inkbody text-[14px] sm:text-[15px] leading-relaxed font-sans max-w-xl">
+          <p>
+            Eighteen isn't just an arbitrary increment of calendar days; it's a phase transition. In physics, matter changes state when it absorbs enough energy to break past old thresholds without losing its essence.
+          </p>
+          <p>
+            That is you today, Onchi. You've crossed into 18 with that effortless balance of gentle poise and sharp, stubborn brilliance. Between the fierce calculus of PHY 105, loud exam halls and the calm center you bring into every conversation, you remain quietly unmistakable.
+          </p>
+        </div>
+
+        <!-- Metric Stat Cards (3 Columns) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+          
+          <!-- Card 1: Continuity -->
+          <div id="stat-days-card" class="bg-card border border-bordercol p-4 rounded-sm hover:border-neutral-400 transition-all select-none group">
+            <div class="text-[10px] tracking-[0.18em] uppercase font-mono text-inkmuted flex items-center justify-between">
+              <span>CONTINUITY //</span>
+              <span class="opacity-0 group-hover:opacity-100 text-[9px] text-caramel transition-opacity">CLICK ↺</span>
+            </div>
+            <div id="stat-days-val" class="font-editorial text-2xl sm:text-3xl text-ink font-semibold mt-2 mb-0.5 tracking-tight">
+              6,574
+            </div>
+            <div id="stat-days-lbl" class="text-[11px] text-inkmuted font-sans">
+              Days of unyielding grace
+            </div>
+          </div>
+
+          <!-- Card 2: Current Challenge -->
+          <div class="bg-card border border-bordercol p-4 rounded-sm hover:border-neutral-400 transition-all">
+            <div class="text-[10px] tracking-[0.18em] uppercase font-mono text-inkmuted">
+              CURRENT CHALLENGE
+            </div>
+            <div class="font-editorial text-2xl sm:text-3xl text-ink font-semibold mt-2 mb-0.5 tracking-tight">
+              PHY 105
+            </div>
+            <div class="text-[11px] text-inkmuted font-sans">
+              Final 15:30, show them today
+            </div>
+          </div>
+
+          <!-- Card 3: Personal Mantra -->
+          <div class="bg-card border border-bordercol p-4 rounded-sm hover:border-neutral-400 transition-all">
+            <div class="text-[10px] tracking-[0.18em] uppercase font-mono text-inkmuted">
+              PERSONAL MANTRA
+            </div>
+            <div class="font-editorial text-2xl sm:text-3xl text-ink font-semibold mt-2 mb-0.5 tracking-tight">
+              Hakunamatata
+            </div>
+            <div class="text-[11px] text-inkmuted font-sans">
+              The quiet protocol
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Column: Archival Plate 01 Portrait (5 cols) -->
+      <div class="lg:col-span-5">
+        <div 
+          class="plate-frame p-2 rounded-sm border border-bordercol bg-white editorial-shadow group cursor-pointer"
+          data-lightbox-src="images/hero-portrait@2x.jpg"
+          data-lightbox-title="Archival Plate 01: Onchi at 18"
+          data-lightbox-meta="Edition XVIII // Unmistakable Grace"
+        >
+          <div class="relative overflow-hidden aspect-[4/5] bg-neutral-100 rounded-sm">
+            <img 
+              src="images/hero-portrait@2x.jpg" 
+              alt="Archival Plate 01: Onchi at 18" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            
+            <!-- Floating overlay caption at bottom of photo -->
+            <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
+              <div class="text-[9px] tracking-[0.25em] uppercase font-mono opacity-80 mb-0.5">
+                ARCHIVAL PLATE 01
+              </div>
+              <div class="font-editorial text-lg sm:text-xl font-normal leading-tight text-white drop-shadow-sm">
+                Onchi at 18 — <span class="italic font-light">Unmistakable Grace</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plate Metadata Bar below photo -->
+          <div class="mt-2.5 px-2 py-1 flex items-center justify-between text-[10px] tracking-[0.16em] uppercase font-mono text-inkmuted border-t border-bordercol/50">
+            <span>CAP. 1024 — EDITION 18</span>
+            <span>PORTRAIT // CLASS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== PULL QUOTE SECTION ==================== -->
+  <section class="w-full bg-[#FAF8F5] border-y border-bordercol py-16 sm:py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <!-- Centered Gold Quote Glyphs -->
+      <div class="text-4xl sm:text-5xl text-caramel font-editorial leading-none select-none">
+        ”
+      </div>
+
+      <!-- High-contrast Italic Serif Quote -->
+      <blockquote class="font-editorial italic text-2xl sm:text-3xl md:text-4xl text-ink leading-snug tracking-tight font-normal px-2">
+        “Some people just shift the center of mass in a room. Even when you're just sitting in the back taking notes, the whole axis tilts in your direction.”
+      </blockquote>
+
+      <!-- Attribution -->
+      <div class="text-[10px] tracking-[0.25em] uppercase font-mono text-inkmuted font-medium pt-2">
+        TRANSITIONAL DYNAMICS — A CELEBRATION OBSERVATION
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE SURVIVOR'S GUIDE: PHY 105 CODEX ==================== -->
+  <section id="codex" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    
+    <!-- Section Header Row -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-bordercol">
+      <div>
+        <div class="text-[10px] tracking-[0.25em] uppercase font-mono text-inkmuted font-semibold mb-1">
+          THE SURVIVOR'S GUIDE
+        </div>
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-[32px] text-ink font-normal">
+          The PHY 105 Exam Codex for Onchi
+        </h2>
+      </div>
+      <p class="text-inkmuted text-xs sm:text-[13px] max-w-sm leading-relaxed font-sans md:text-right">
+        A slightly irreverent, absolutely true field guide for conquering today's PHY 105 finale with effortless grace.
+      </p>
+    </div>
+
+    <!-- 3 Codex Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      
+      <!-- Card 1: The Unstoppable Force -->
+      <div class="codex-card bg-card border border-bordercol p-6 rounded-sm flex flex-col justify-between editorial-shadow-hover group cursor-pointer">
+        <div>
+          <div class="flex items-center justify-between text-[10px] tracking-[0.2em] uppercase font-mono text-inkmuted mb-4">
+            <span>COLLECTION 01</span>
+            <span class="font-mono text-neutral-400">01/03</span>
+          </div>
+          <h3 class="font-serif text-lg sm:text-xl text-ink font-normal mb-3 group-hover:text-caramel transition-colors">
+            The Unstoppable Force
+          </h3>
+          <p class="text-inkbody text-xs sm:text-[13px] leading-relaxed font-sans">
+            An unstoppable girl sitting down for the final test. You've overcome far harder things than a 2-hour exam hall. Walk in, own the paper, and remember it was built for you to shatter.
+          </p>
+          <div class="codex-details hidden mt-3 pt-3 border-t border-dashed border-bordercol text-[11px] font-mono text-caramel">
+            ⚡ Newtonian Axiom: F = dp/dt. Your momentum is strictly non-negotiable.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-bordercol/60 flex items-center gap-2 text-[10px] tracking-[0.16em] uppercase font-mono text-inkmuted group-hover:text-ink transition-colors">
+          <span>⚡ FORCE & ACCELERATION</span>
+        </div>
+      </div>
+
+      <!-- Card 2: The Calm Variable (Active / Highlighted) -->
+      <div class="codex-card bg-card border-2 border-caramel/40 p-6 rounded-sm flex flex-col justify-between editorial-shadow-hover relative group cursor-pointer bg-gradient-to-b from-white via-white to-caramelsoft/30">
+        <!-- Badge -->
+        <div>
+          <div class="flex items-center justify-between text-[10px] tracking-[0.2em] uppercase font-mono text-caramel mb-4 font-semibold">
+            <span>EXAM STRATEGY</span>
+            <span class="flex items-center gap-1.5 font-mono text-caramel">
+              <span class="w-2 h-2 rounded-full bg-caramel pulse-dot inline-block"></span>
+              02/03
+            </span>
+          </div>
+          <h3 class="font-serif text-lg sm:text-xl text-ink font-normal mb-3 group-hover:text-caramel transition-colors">
+            The Calm Variable
+          </h3>
+          <p class="text-inkbody text-xs sm:text-[13px] leading-relaxed font-sans">
+            Hakunamatata isn't about avoiding stress; it's about holding stillness inside the fire. Deep breath. One question at a time. The formulas live inside you already.
+          </p>
+          <div class="codex-details hidden mt-3 pt-3 border-t border-dashed border-caramel/40 text-[11px] font-mono text-caramel">
+            🌱 Thermodynamic Rule: Equilibrium is found not in zero pressure, but in steady poise.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-bordercol/60 flex items-center gap-2 text-[10px] tracking-[0.16em] uppercase font-mono text-caramel group-hover:text-ink transition-colors font-semibold">
+          <span>🌱 TRANQUILITY COEFFICIENT</span>
+        </div>
+      </div>
+
+      <!-- Card 3: The Post-Exam Horizon -->
+      <div class="codex-card bg-card border border-bordercol p-6 rounded-sm flex flex-col justify-between editorial-shadow-hover group cursor-pointer">
+        <div>
+          <div class="flex items-center justify-between text-[10px] tracking-[0.2em] uppercase font-mono text-inkmuted mb-4">
+            <span>COLLECTION 03</span>
+            <span class="font-mono text-neutral-400">03/03</span>
+          </div>
+          <h3 class="font-serif text-lg sm:text-xl text-ink font-normal mb-3 group-hover:text-caramel transition-colors">
+            The Post-Exam Horizon
+          </h3>
+          <p class="text-inkbody text-xs sm:text-[13px] leading-relaxed font-sans">
+            15:30 — that is the exact minute the weight drops from your shoulders. Ahead lies clear sky, soft hours, and all the rest you've earned ten times over.
+          </p>
+          <div class="codex-details hidden mt-3 pt-3 border-t border-dashed border-bordercol text-[11px] font-mono text-caramel">
+            🕊️ Kinematic State: Terminal velocity becomes zero; sweet rest begins.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-bordercol/60 flex items-center gap-2 text-[10px] tracking-[0.16em] uppercase font-mono text-inkmuted group-hover:text-ink transition-colors">
+          <span>🕊️ TERMINAL VELOCITY: ZERO</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==================== DUAL PHOTO & "NO WORRIES" SECTION ==================== -->
+  <section id="hakunamatata" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-bordercol">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <!-- Left Column: Two Framed Photographic Plates side-by-side (6 cols) -->
+      <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+        
+        <!-- Photo Plate 02: Poise & Expression -->
+        <div 
+          class="plate-frame p-2 rounded-sm border border-bordercol bg-white editorial-shadow group cursor-pointer"
+          data-lightbox-src="images/plate-02@2x.jpg"
+          data-lightbox-title="Plate 02: Poise & Expression"
+          data-lightbox-meta="Onchi // Chapter 18 Archive"
+        >
+          <div class="aspect-[3/4] overflow-hidden bg-neutral-100 rounded-sm">
+            <img 
+              src="images/plate-02@2x.jpg" 
+              alt="Plate 02 - Poise & Expression" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="mt-2 flex items-center justify-between text-[9px] tracking-[0.15em] uppercase font-mono text-inkmuted pt-1">
+            <span class="font-semibold text-ink">PLATE 02</span>
+            <span>Poise & Expression</span>
+          </div>
+        </div>
+
+        <!-- Photo Plate 03: The Hakunamatata Smile -->
+        <div 
+          class="plate-frame p-2 rounded-sm border border-bordercol bg-white editorial-shadow group cursor-pointer"
+          data-lightbox-src="images/plate-03@2x.jpg"
+          data-lightbox-title="Plate 03: The Hakunamatata Smile"
+          data-lightbox-meta="Onchi // Joy & Radiance"
+        >
+          <div class="aspect-[3/4] overflow-hidden bg-neutral-100 rounded-sm">
+            <img 
+              src="images/plate-03@2x.jpg" 
+              alt="Plate 03 - The Hakunamatata Smile" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="mt-2 flex items-center justify-between text-[9px] tracking-[0.15em] uppercase font-mono text-inkmuted pt-1">
+            <span class="font-semibold text-ink">PLATE 03</span>
+            <span>The Hakunamatata Smile</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Editorial Narrative & Action Directive (6 cols) -->
+      <div class="lg:col-span-6 space-y-6">
+        
+        <div class="text-[10px] tracking-[0.25em] uppercase font-mono text-inkmuted font-semibold">
+          LIGHT HEART & POWERFUL INTELLECT
+        </div>
+
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-ink leading-tight font-normal">
+          You said “No Worries” — but we both know you overthink in 4K.
+        </h2>
+
+        <div class="space-y-4 text-inkbody text-xs sm:text-[14px] leading-relaxed font-sans">
+          <p>
+            That's the beauty of your mind. You carry Hakunamatata not because the universe never tests your patience, but because you choose calmness as a defiance against chaos.
+          </p>
+          <p>
+            Even when PHY 105 syllabus tried to rob your peace, you stood ground. Today, as 18 begins, let your shoulders drop. Take a full, deep breath. Let someone else worry about the universe for once.
+          </p>
+        </div>
+
+        <!-- Directive Action Button -->
+        <div class="pt-2">
+          <button class="trigger-signal-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-sm border border-caramel/40 bg-caramelsoft hover:bg-caramel hover:text-white text-caramel text-[11px] tracking-[0.16em] uppercase font-mono transition-all editorial-shadow font-semibold">
+            <span>✨ DIRECTIVE: UNLEASH THE PHY 105 CHAPTER 2024 CELEBRATION</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTINUITY & GROWTH: DAY 001 TO 6,574 ==================== -->
+  <section class="w-full bg-paperalt border-t border-bordercol py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2">
+        <div class="text-[10px] tracking-[0.25em] uppercase font-mono text-inkmuted font-semibold">
+          CONTINUITY & GROWTH
+        </div>
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-ink font-normal">
+          Origin: Day 001 to 6,574
+        </h2>
+        <p class="text-inkmuted text-xs sm:text-[13px] font-sans max-w-md mx-auto">
+          Two photographs separated by time, linked by the same fierce spark and undeniable poise.
+        </p>
+      </div>
+
+      <!-- Comparison Photo Container Box -->
+      <div class="bg-card border border-bordercol p-4 sm:p-6 rounded-sm editorial-shadow space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          
+          <!-- Photo 1: Little Onchi (Baby) -->
+          <div 
+            class="plate-frame p-2 rounded-sm border border-bordercol bg-white group cursor-pointer"
+            data-lightbox-src="images/baby-onchi@2x.jpg"
+            data-lightbox-title="Little Onchi — Origin: Day 001"
+            data-lightbox-meta="The Early Spark // 2006 Archive"
+          >
+            <div class="relative overflow-hidden aspect-[4/3] bg-neutral-900 rounded-sm">
+              <img 
+                src="images/baby-onchi@2x.jpg" 
+                alt="Little Onchi as a baby" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-2 left-2 bg-black/70 backdrop-blur-xs text-white text-[9px] font-mono tracking-widest px-2 py-0.5 rounded uppercase">
+                ORIGIN // DAY 001
+              </div>
+            </div>
+            <div class="mt-3 text-center">
+              <div class="font-editorial text-lg text-ink font-semibold">
+                Little Onchi
+              </div>
+              <div class="text-[9px] tracking-[0.2em] uppercase font-mono text-inkmuted mt-0.5">
+                THE EARLY SPARK — 2006 ARCHIVE
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 2: 18th Chapter (Now) -->
+          <div 
+            class="plate-frame p-2 rounded-sm border border-bordercol bg-white group cursor-pointer"
+            data-lightbox-src="images/chapter-18@2x.jpg"
+            data-lightbox-title="18th Chapter — Now"
+            data-lightbox-meta="Grace, Transition, and New Orbits"
+          >
+            <div class="relative overflow-hidden aspect-[4/3] bg-neutral-900 rounded-sm">
+              <img 
+                src="images/chapter-18@2x.jpg" 
+                alt="Onchi at 18" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-2 left-2 bg-black/70 backdrop-blur-xs text-white text-[9px] font-mono tracking-widest px-2 py-0.5 rounded uppercase">
+                18TH CHAPTER // NOW
+              </div>
+            </div>
+            <div class="mt-3 text-center">
+              <div class="font-editorial text-lg text-ink font-semibold">
+                18th Chapter
+              </div>
+              <div class="text-[9px] tracking-[0.2em] uppercase font-mono text-inkmuted mt-0.5">
+                GRACE, TRANSITION, AND NEW ORBITS
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner Quote at bottom of comparison card -->
+        <div class="border-t border-bordercol/60 pt-5 text-center">
+          <p class="font-editorial italic text-base sm:text-lg md:text-xl text-ink leading-relaxed max-w-2xl mx-auto">
+            “From little smiles to stepping into adulthood. Happy 18th Birthday, Hakunamatata. Now go conquer that PHY 105 exam.”
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FINAL FINALE: COSMIC CTA BANNER ==================== -->
+  <section id="epilogue" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="ambient-glow p-8 sm:p-12 md:p-14 rounded-sm text-center space-y-6 editorial-shadow relative overflow-hidden">
+      
+      <!-- Subtle watermark -->
+      <div class="absolute -right-6 -bottom-6 font-serif text-[120px] text-neutral-400/10 select-none pointer-events-none">
+        18
+      </div>
+
+      <div class="text-[10px] tracking-[0.28em] uppercase font-mono text-caramel font-semibold">
+        FINAL FINALE
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-ink font-normal tracking-tight">
+        May the cosmos favor your every equation.
+      </h2>
+
+      <p class="text-inkmuted text-xs sm:text-[14px] font-sans max-w-lg mx-auto leading-relaxed">
+        Here’s to conquering PHY 105, surviving 100% of your hardest days, and stepping boldly into Chapter 18.
+      </p>
+
+      <!-- Action Buttons Row -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
+        
+        <!-- Primary Black Button with Heart Icon -->
+        <button class="trigger-signal-btn w-full sm:w-auto px-6 py-3.5 bg-ink text-white rounded-sm text-[11px] tracking-[0.18em] uppercase font-mono flex items-center justify-center gap-2 hover:bg-neutral-800 transition-all shadow-md group">
+          <i data-lucide="heart" class="w-3.5 h-3.5 fill-current text-white group-hover:scale-110 transition-transform"></i>
+          <span>SEND BIRTHDAY SIGNAL</span>
+        </button>
+
+        <!-- Secondary White / Outline Button -->
+        <button class="trigger-signal-btn w-full sm:w-auto px-6 py-3.5 bg-white text-ink border border-bordercol rounded-sm text-[11px] tracking-[0.18em] uppercase font-mono flex items-center justify-center gap-2 hover:border-neutral-400 transition-all">
+          <span>CHAPTER 18 →</span>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="w-full bg-[#FAF8F5] border-t border-bordercol py-12 px-4 text-center space-y-4">
+    <div class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase font-mono text-ink">
+      ONCHI <span class="text-neutral-400 font-light">//</span> EDITION XVIII
+    </div>
+    <p class="text-inkmuted text-xs max-w-xl mx-auto font-sans leading-relaxed">
+      A celebratory digital archive created to honor eighteen remarkable years, a fierce intellect bound to enter PHY 105 with absolute poise.
+    </p>
+    <div class="text-[10px] tracking-[0.2em] uppercase font-mono text-neutral-400 pt-2">
+      VOL. 0018 • ISSUE 2024 • DESIGNED WITH DEVOTION
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE SIGNAL MODAL ==================== -->
+  <div id="signal-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 lightbox-backdrop transition-opacity">
+    <div class="bg-card border border-bordercol max-w-lg w-full p-6 sm:p-8 rounded-sm editorial-shadow relative animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Close button -->
+      <button id="close-signal-btn" class="absolute top-4 right-4 text-inkmuted hover:text-ink p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-center space-y-4">
+        
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-caramelsoft text-caramel text-[10px] font-mono tracking-widest uppercase">
+          <span class="w-2 h-2 rounded-full bg-caramel pulse-dot"></span>
+          COSMIC TRANSMISSION DELIVERED
+        </div>
+
+        <h3 class="font-serif text-2xl sm:text-3xl text-ink">
+          Happy 18th Birthday, Onchi!
+        </h3>
+
+        <!-- Dynamic Cosmic Wish -->
+        <div class="p-4 bg-[#FAF9F6] border border-bordercol rounded-sm min-h-[90px] flex items-center justify-center">
+          <p id="cosmic-wish-text" class="font-editorial italic text-lg sm:text-xl text-ink text-center transition-opacity duration-200">
+            “May the gravitational pull of all your goals always exceed any external friction.”
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <button id="next-wish-btn" class="text-[11px] font-mono tracking-wider uppercase text-caramel hover:underline flex items-center gap-1">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            ANOTHER BLESSING
+          </button>
+          <span class="text-[10px] font-mono text-inkmuted">PHY 105 CONFIDENCE: 100%</span>
+        </div>
+
+        <div class="pt-4 border-t border-bordercol flex flex-col gap-2">
+          <button onclick="navigator.clipboard.writeText(window.location.href); alert('Celebration link copied!');" class="w-full py-2.5 bg-ink text-white text-[11px] font-mono tracking-widest uppercase rounded-sm hover:bg-neutral-800 transition-colors">
+            SHARE THIS EDITION
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== PHOTO LIGHTBOX MODAL ==================== -->
+  <div id="photo-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-4 lightbox-backdrop transition-opacity">
+    <div class="relative max-w-2xl w-full flex flex-col items-center">
+      <button id="close-lightbox" class="absolute -top-10 right-0 text-white hover:text-caramel transition-colors p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="bg-white p-3 rounded-sm editorial-shadow max-h-[85vh] overflow-hidden flex flex-col items-center">
+        <img id="lightbox-img" src="" alt="Enlarged Plate" class="max-h-[70vh] w-auto object-contain rounded-xs" />
+        <div class="mt-3 text-center">
+          <div id="lightbox-title" class="font-editorial text-xl text-ink font-semibold"></div>
+          <div id="lightbox-meta" class="text-[10px] tracking-[0.2em] uppercase font-mono text-inkmuted mt-0.5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
